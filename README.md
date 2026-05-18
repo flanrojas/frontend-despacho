@@ -52,3 +52,4 @@ EC2_SSH_KEY=<llave privada SSH>
 - El EC2 debe tener Docker y AWS CLI instalados.
 - El EC2 debe tener un rol de instancia con permisos para hacer pull desde ECR.
 - El security group del EC2 debe permitir el puerto que definas en `APP_HOST_PORT`. 
+ 
