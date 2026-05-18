@@ -55,5 +55,5 @@ jobs:
             docker pull "$ECR_REPO_URL:latest"
             docker stop front-despacho || true
             docker rm front-despacho || true
-            docker run -d --name front-despacho -p 3000:80 "$ECR_REPO_URL:latest"
+            docker run -d --name front-despacho -p 80:80 "$ECR_REPO_URL:latest"
 
