@@ -2,10 +2,11 @@
 
 ## Configuración
 
-Crea un archivo `.env` a partir de `.env.example` y define la base completa del backend:
+Crea un archivo `.env` a partir de `.env.example` y define las URLs de backend para ventas y despachos:
 
 ```env
-VITE_API_BASE_URL=https://tu-backend.com
+VITE_VENTAS_API_URL=https://tu-backend-ventas.com
+VITE_DESPACHOS_API_URL=https://tu-backend-despachos.com
 ```
 
 Luego instala dependencias y levanta el proyecto:
@@ -32,7 +33,8 @@ Configura estas **Variables** en GitHub:
 ```text
 AWS_REGION=us-east-1
 ECR_REPO_URL=<account-id>.dkr.ecr.us-east-1.amazonaws.com/front-despacho
-VITE_API_BASE_URL=https://tu-backend.com
+VITE_VENTAS_API_URL=https://tu-backend-ventas.com
+VITE_DESPACHOS_API_URL=https://tu-backend-despachos.com
 ```
 
 ### Secretos del repositorio

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { apiClient } from "../../api/client";
+import { despachosClient } from "../../api/client";
 import { Modal } from "./Modal";
 import { FormCierreDespacho } from "./FormCierreDespacho";
 
@@ -7,7 +7,7 @@ export const TableDespachos = () => {
   const [despachos, setDespachos] = useState([]);
 
   const despacho = async () => {
-    await apiClient
+    await despachosClient
       .get("/v1/despachos")
       .then((response) => {
         console.log(response.data);

@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { apiClient } from "../../api/client";
+import { despachosClient } from "../../api/client";
 
 export const FormCierreDespacho = ({ despacho, onClose }) => {
   const { register, handleSubmit } = useForm();
@@ -15,7 +15,7 @@ export const FormCierreDespacho = ({ despacho, onClose }) => {
     console.log("Datos del formulario:", jsonData);
 
     try {
-      await apiClient.put(`/v1/despachos/${despacho.idDespacho}`, jsonData);
+      await despachosClient.put(`/v1/despachos/${despacho.idDespacho}`, jsonData);
       Swal.fire({
         title: "Despacho modificado 🛻!",
         text: "El despacho ha sido modificado exitosamente",

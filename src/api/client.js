@@ -1,15 +1,27 @@
 import axios from "axios";
 
-const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+const ventasApiUrl = import.meta.env.VITE_VENTAS_API_URL;
+const despachosApiUrl = import.meta.env.VITE_DESPACHOS_API_URL;
 
-if (!apiBaseUrl) {
-  throw new Error("Falta definir VITE_API_BASE_URL en el archivo .env");
+if (!ventasApiUrl) {
+  throw new Error("Falta definir VITE_VENTAS_API_URL en el archivo .env o en el entorno");
 }
 
-export const apiClient = axios.create({
-  baseURL: apiBaseUrl.replace(/\/$/, ""),
-  headers: {
-    "Content-Type": "application/json",
-    Accept: "application/json",
-  },
+if (!despachosApiUrl) {
+  throw new Error("Falta definir VITE_DESPACHOS_API_URL en el archivo .env o en el entorno");
+}
+
+const jsonHeaders = {
+  "Content-Type": "application/json",
+  Accept: "application/json",
+};
+
+export const ventasClient = axios.create({
+  baseURL: ventasApiUrl.replace(/\/$/, ""),
+  headers: jsonHeaders,
+});
+
+export const despachosClient = axios.create({
+  baseURL: despachosApiUrl.replace(/\/$/, ""),
+  headers: jsonHeaders,
 });

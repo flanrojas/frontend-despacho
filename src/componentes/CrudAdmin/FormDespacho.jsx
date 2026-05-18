@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { apiClient } from "../../api/client";
+import { ventasClient, despachosClient } from "../../api/client";
 
 export const FormDespacho = ({ venta, onClose }) => {
   const { register, handleSubmit } = useForm();
@@ -24,8 +24,8 @@ export const FormDespacho = ({ venta, onClose }) => {
     console.log("Datos del formulario:", jsonData);
 
     try {
-      await apiClient.put(`/v1/ventas/${venta.idVenta}`, jsonDataSales);
-      await apiClient.post("/v1/despachos", jsonData);
+      await ventasClient.put(`/v1/ventas/${venta.idVenta}`, jsonDataSales);
+      await despachosClient.post("/v1/despachos", jsonData);
       Swal.fire({
         title: "Despacho registrado 🛻!",
         text: "El despacho ha sido generado con éxito en la base de datos",

@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { Modal } from "./Modal";
 import { FormDespacho } from "./FormDespacho";
-import { apiClient } from "../../api/client";
+import { ventasClient } from "../../api/client";
 
 export const TableCompras = () => {
   const [ventas, setVentas] = useState([]);
 
   const compras = async () => {
-    await apiClient.get("/v1/ventas").then((response) => {
+    await ventasClient.get("/v1/ventas").then((response) => {
       console.log(response.data);
       setVentas(response.data);
     });
