@@ -57,4 +57,3 @@ jobs:
             docker rm front-despacho || true
             docker run -d --name front-despacho -p 3000:80 "$ECR_REPO_URL:latest"
 
-
