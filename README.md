@@ -14,7 +14,7 @@ Luego instala dependencias y levanta el proyecto:
 ```bash
 npm install
 npm run dev
-```
+``` 
 
 ## Despliegue con GitHub Actions
 
